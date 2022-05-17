@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{pifont}
+\usepackage{makecell}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\usetikzlibrary{arrows}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+
+\newcounter{Figcount}
+\newcounter{tempFigure}
+\newenvironment{TableCaption}{%
+    \renewcommand{\figurename}{Table}
+    \setcounter{tempFigure}{\thefigure}
+    \setcounter{figure}{\theFigcount}
+    }{%
+    \setcounter{figure}{\thetempFigure}
+    \stepcounter{Figcount}
+    }
+
+
+\numberwithin{equation}{section}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{satz}[definition]{Satz}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{fact}[definition]{Fact}
+\title{Shortest Path Probleme\\[0.5em] \large{Seminar: Theorie evolutionärer Algorithmen \\[0.5em]} }
+
+\author{Amr Elmaghalawy, Alexander Lauer}
+
+\date{Sommersemester 2022}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{Kapitel/Abstract}
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+
+
+
+
+\input{Kapitel/Einleitung}
+\cite{neumann2013bioinspired}
+\input{Kapitel/APSP}
+\input{Kapitel/AntColony}
+
+
+\newpage
+
+\bibliographystyle{abbrv}
+\bibliography{Literatur}
+
+\end{document}
